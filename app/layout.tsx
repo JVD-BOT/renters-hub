@@ -25,32 +25,41 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rentershub.uk"),
+  metadataBase: new URL("https://renters-hub.vercel.app"),
   title: {
-    default: "Renters Hub — Know your rights under the Renters' Rights Act 2025",
+    default: "Renters Hub — Tools and guides for the Renters' Rights Act 2025",
     template: "%s · Renters Hub",
   },
   description:
-    "Free, plain-English tools and guides for private renters in England under the Renters' Rights Act 2025. Check your rent increase, understand Section 8 notices, and exercise your rights.",
+    "Plain-English tools and guides for private renters in England under the Renters' Rights Act 2025. Free Section 13 rent increase check, Section 8 grounds explained, and expert guides written by a renter for renters.",
   applicationName: "Renters Hub",
   authors: [{ name: "Renters Hub" }],
   keywords: [
     "Renters' Rights Act 2025",
     "Section 13 rent increase",
+    "Form 4A",
     "Section 8 notice",
     "private renting England",
-    "tenant rights UK",
+    "tenant rights UK 2026",
+    "First-tier Tribunal rent challenge",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://rentershub.uk",
+    url: "https://renters-hub.vercel.app",
     siteName: "Renters Hub",
-    title: "Renters Hub — Know your rights under the Renters' Rights Act 2025",
+    title: "Renters Hub — Tools and guides for the Renters' Rights Act 2025",
     description:
       "Free, plain-English tools and guides for private renters in England.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Renters Hub",
+    description:
+      "Plain-English tools and guides for private renters in England.",
+  },
   robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({
@@ -61,7 +70,7 @@ export default function RootLayout({
       lang="en-GB"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-paper text-ink">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
