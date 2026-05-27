@@ -1,99 +1,107 @@
-# Renters Hub — project context
+# Renters Hub — project context (v2)
 
-A consumer-facing site for private renters in England, built around the Renters' Rights Act 2025 (commenced 1 May 2026). Free, plain-English tools and guides. Tenant-side first; landlord-side monetisation comes later.
+A consumer-facing site for private renters in England, built around the Renters' Rights Act 2025 (commenced 1 May 2026). **Set as a publication, not a SaaS landing page.** Free, plain-English. Tenant-side first; landlord-side monetisation comes later.
 
-Currently live at: **https://renters-hub.vercel.app** (Vercel auto-deploys from `main`)
+Live at: **https://renters-hub.vercel.app** (Vercel auto-deploys from `main`)
 
-## Stack
+## Design direction (v2)
 
-- Next.js 16 (App Router) + TypeScript (strict)
-- Tailwind CSS 4 (CSS-first `@theme` config in `app/globals.css`)
-- lucide-react for icons
-- next/font: Geist Sans (body), Fraunces (display headings), Geist Mono (mono)
-- No database, no auth, no Stripe, no LLM API calls in v0/v1
-- Deploys to Vercel from GitHub `main`
+Pamphlet / indie magazine. References:
+- **Stripe Press** — editorial gravitas
+- **Defector Media / The Markup** — irreverent indie journalism
+- **The Browser Company** — warmth + personality
+- 1970s tenant-rights leaflets — political-publication-not-startup energy
 
-## Design system (v1)
+Specifically *not*:
+- The shadcn / Vercel / Linear template (italic accent words, kicker labels, soft gradients, card grids with hover lift, lucide icons in everything). Every AI generates this now.
 
-Palette anchored to Jon's personal identity, elevated for public-facing use:
+### Palette
 
-| Token              | Hex       | Use                                     |
-|--------------------|-----------|------------------------------------------|
-| `--ink`            | `#0D0D12` | Primary text                             |
-| `--ink-soft`       | `#1A1A24` | Slightly lighter ink for prose body      |
-| `--paper`          | `#F7F4ED` | Page background (warmer than v0)         |
-| `--paper-soft`     | `#EFEBE0` | Section backgrounds, cards               |
-| `--paper-deep`     | `#E5DFD0` | Deepest neutral tone                     |
-| `--signal`         | `#5B5EFF` | Primary CTA, links, brand accent         |
-| `--signal-soft`    | `#ECEDFF` | Signal background tint                   |
-| `--signal-deep`    | `#4244D9` | Signal text on light backgrounds         |
-| `--sand`           | `#C29A5C` | Editorial secondary (warm accent)        |
-| `--mint` / `--coral` / `--amber` | varied | Semantic only (verdict colours)         |
-| `--mute`           | `#5D5D6B` | Secondary text                           |
+| Token            | Hex       | Use                                          |
+|------------------|-----------|----------------------------------------------|
+| `--paper`        | `#F0E9D6` | Page background. Cream, confident.           |
+| `--paper-deep`   | `#E5DDC4` | Section backgrounds, notes                   |
+| `--paper-deeper` | `#D8CDAE` | Deepest neutral                              |
+| `--ink`          | `#181612` | Primary text. Warm near-black, not blue.     |
+| `--ink-soft`     | `#2E2920` | Body prose                                   |
+| `--brick`        | `#8C2622` | THE accent. Used confidently — not subtle.   |
+| `--brick-soft`   | `#F2D9D5` | Hover backgrounds for brick links            |
+| `--rust`         | `#C66835` | Secondary warm, sparingly                    |
+| `--mute`         | `#6B6358` | Secondary text, taupe not grey               |
+| `--positive` / `--warn` / `--danger` | desat. earth tones | Tool verdicts only |
 
-Use `.display` / `.display-italic` utility classes for Fraunces headline-style text. Use `.prose` for guide-page content. Use `.kicker` for the small uppercase pre-heading labels. Use `.callout`, `.callout-warn`, `.callout-good` inside `.prose` for inline boxed tips.
+### Typography
 
-## Sitemap (as built)
+| Family            | Loaded via              | Use                                  |
+|-------------------|-------------------------|--------------------------------------|
+| **Inter**         | `next/font/google`      | Body sans-serif, navigation          |
+| **Newsreader**    | `next/font/google`      | All display headlines, prose body    |
+| **JetBrains Mono**| `next/font/google`      | Metadata, dates, section numbers     |
+
+Utility classes: `.display`, `.display-bold`, `.display-italic`, `.meta`, `.meta-lowercase`, `.section-number`, `.drop-cap`, `.prose`, `.note`, `.btn-primary`, `.btn-secondary`, `.rule-thick`, `.rule-thin`.
+
+`.prose h2[data-num="3"]` prefixes the heading with `§3` automatically.
+`.drop-cap` floats a large brick-red first letter.
+
+### Component vocabulary
+
+- **Masthead** (header) — newspaper nameplate with date / Vol / Issue
+- **Colophon** (footer) — book-style imprint with fonts used
+- **Cover** (homepage hero) — magazine cover with sidebar facts box
+- **Contents** (guides list) — numbered TOC (01, 02, 03)
+- **Editorial** (homepage section) — first-person reason for the site
+- **Note** — left-bordered editorial callout
+- **Pull quote** — `blockquote` in long-form guides
+
+## Sitemap
 
 ```
-/                                  Homepage (hero, stats, tool feature, guides, why, closing)
-/rent-increase-check               Section 13 rent increase validator (hero tool)
-/guides                            Guides index page
-/guides/what-changed-may-2026      Overview of RRA 2025 (1800+ words)
-/guides/rent-increases             How rent increases work (1900+ words)
-/guides/section-13-notice          Form 4A decoded (1900+ words)
-/about                             First-person About page (E-E-A-T anchor)
-/privacy                           Privacy policy
-/contact                           Email + emergency redirect to Shelter
-/sitemap.xml                       Auto-generated
-/robots.txt                        Auto-generated
+/                                  Front (cover, contents, tool, editorial, promise)
+/rent-increase-check               Instrument No. 001 — the tool
+/guides                            Contents page
+/guides/what-changed-may-2026      Essay No. 01
+/guides/rent-increases             Essay No. 02
+/guides/section-13-notice          Reference No. 03
+/about                             Colophon / about
+/privacy                           Notice
+/contact                           Correspondence
 ```
 
 ## Dev workflow
 
-Local dev requires Node 18+ and npm:
 ```
 npm install
-npm run dev
+npm run dev          # http://localhost:3000
+npm run build        # production build + type-check
 ```
 
-Serves on `http://localhost:3000` with hot reload. Keep the dev server in a **separate** PowerShell window from any Claude Code session.
+Keep dev server in a **separate** PowerShell window from any Claude Code session.
 
-## Build & deploy
+## Content policy
 
-```
-npm run build      # production build + type-check
-npm run start      # serve the built output locally
-```
-
-Production deploys via Vercel from GitHub `main`. No env vars required.
-
-## Content policy (AdSense-aware)
-
-- Every guide page must carry "Last reviewed" + Sources section
-- Every guide page must show the disclaimer pointing to Shelter / Citizens Advice / a solicitor
-- All guides written from first-person voice where appropriate (E-E-A-T signal)
-- Every guide links to primary sources (legislation.gov.uk, GOV.UK)
-- Site is **England only** — be explicit about this on every guide
-- "Last updated" date in footer matches most recently reviewed page
+- Every guide carries "Last reviewed" + Sources section
+- Every guide ends with the Editorial note (disclaimer + Shelter/Citizens Advice/solicitor pointers)
+- First-person voice throughout (E-E-A-T signal)
+- All citations link to primary sources (legislation.gov.uk, GOV.UK)
+- **England only** — explicit on every guide
 - No AI-generated content presented as expert writing without genuine review
 
 ## AdSense plan
 
-We do **not** apply for AdSense yet. The 2026 AdSense bar requires 3–6 months of consistent activity and 20–30 quality articles. Current status: 3 substantive guides + 1 tool + about/privacy/contact = 7 pages of substance. Plan: add a guide a week until we hit ~15, then apply at the 3-month mark.
+Don't apply yet. The 2026 bar requires 3–6 months of site activity and ~20–30 substantial articles. Current state: 3 substantive guides + 1 tool + 3 trust pages. Plan: add a guide a week until ~15, apply at ~3-month mark.
 
-## Guardrails — do NOT add without explicit instruction from Jon
+## Guardrails — do NOT add without explicit instruction
 
 - Supabase or any database
-- Authentication (NextAuth, Clerk, etc.)
-- Stripe or any billing
+- Authentication
+- Stripe / billing
 - Anthropic / OpenAI / any LLM API calls
-- Analytics (GA, Plausible, Fathom, Vercel Analytics) — privacy commitment
+- Analytics (GA, Plausible, Fathom, Vercel Analytics)
 - Third-party trackers, ads, or affiliate scripts (until AdSense application)
 
 ## Workflow rules
 
-- PowerShell syntax for any terminal commands (semicolons, not `&&`)
+- PowerShell syntax (semicolons, not `&&`)
 - All commits go to `main` (not feature branches)
 - After meaningful changes: `npm run build` to catch type errors before committing
 - Verify with `git log --oneline -5` and live URL after every push

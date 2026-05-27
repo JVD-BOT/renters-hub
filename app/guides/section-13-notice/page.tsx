@@ -10,11 +10,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <GuideLayout
+      number="03"
+      category="Reference"
       title="Section 13 notices, decoded"
-      intro="A Section 13 notice, served on the new Form 4A, is now the only legal way for a landlord to increase rent on an assured tenancy in England. If you've received one, here's how to read it field by field."
-      readTime="6 min read"
+      intro="A Section 13 notice on the new Form 4A is now the only legal way for a landlord to increase rent on an assured tenancy in England. If you've received one, here's how to read it field by field."
+      readTime="6 min"
     >
-      <p>
+      <p className="drop-cap">
         Section&nbsp;13 of the Housing Act 1988, as amended by the
         Renters&apos; Rights Act 2025, sets out the procedure for increasing
         rent on an assured tenancy. The amendments commenced on 1 May 2026.
@@ -32,21 +34,21 @@ export default function Page() {
         >
           GOV.UK
         </a>
-        . If anything on the notice you&apos;ve received looks different from
-        what I describe, that&apos;s a flag worth checking.
+        . If anything on the notice you&apos;ve received looks different
+        from what I describe, that&apos;s a flag worth checking.
       </p>
 
-      <h2 id="what-it-looks-like">What a valid Section 13 notice looks like</h2>
+      <h2 id="what-it-looks-like" data-num="1">What a valid Section 13 notice looks like</h2>
       <p>
-        A correctly completed Form&nbsp;4A must include all of the following.
-        These aren&apos;t my opinion — they&apos;re prescribed by the Assured
-        Tenancies and Agricultural Occupancies (Forms) (England) Regulations,
-        as amended by the Renters&apos; Rights Act 2025.
+        A correctly completed Form&nbsp;4A must include all of the
+        following. These aren&apos;t my opinion — they&apos;re prescribed by
+        the Assured Tenancies and Agricultural Occupancies (Forms) (England)
+        Regulations, as amended by the Renters&apos; Rights Act 2025.
       </p>
       <ul>
         <li>
-          <strong>The address of the property</strong> the tenancy relates to,
-          including the postcode
+          <strong>The address of the property</strong> the tenancy relates
+          to, including the postcode
         </li>
         <li>
           <strong>The name of the landlord</strong> (the person legally
@@ -57,8 +59,8 @@ export default function Page() {
           agreement
         </li>
         <li>
-          <strong>The existing rent</strong>, including the period (e.g. £1,450
-          per calendar month)
+          <strong>The existing rent</strong>, including the period (e.g.
+          £1,450 per calendar month)
         </li>
         <li>
           <strong>The proposed new rent</strong>, including the period
@@ -71,8 +73,8 @@ export default function Page() {
           the First-tier Tribunal</strong> to challenge the proposed rent
         </li>
         <li>
-          <strong>The landlord&apos;s signature</strong> and the date the notice
-          was signed
+          <strong>The landlord&apos;s signature</strong> and the date the
+          notice was signed
         </li>
       </ul>
       <p>
@@ -81,49 +83,49 @@ export default function Page() {
         Section&nbsp;13 requirement. The notice has to be on the form.
       </p>
 
-      <h2 id="three-dates">The three dates that matter</h2>
+      <h2 id="three-dates" data-num="2">The three dates that matter</h2>
       <p>
         Section 13 stands or falls on three dates. If you only check one
         thing on the form, check these.
       </p>
       <h3>Date 1: When was the notice served?</h3>
       <p>
-        This is the date the notice was given to you, not the date written on
-        the form itself. If it was posted, served by first class post is
-        deemed served two working days after posting. If it was hand-delivered
-        or emailed, it&apos;s served on the day you received it.
+        This is the date the notice was given to you, not the date written
+        on the form itself. If it was posted, served by first class post is
+        deemed served two working days after posting. If it was
+        hand-delivered or emailed, it&apos;s served on the day you received
+        it.
       </p>
       <h3>Date 2: When did your last rent increase take effect?</h3>
       <p>
         If you&apos;ve never had a rent increase, this is the date your
-        tenancy began. Either way, this is the date the 12-month clock starts
-        running from.
+        tenancy began. Either way, this is the date the 12-month clock
+        starts running from.
       </p>
       <h3>Date 3: When does the new rent take effect?</h3>
       <p>
-        Written on the notice. This is the date the increased rent starts being
-        payable, assuming the notice is valid and you don&apos;t challenge it.
+        Written on the notice. This is the date the increased rent starts
+        being payable, assuming the notice is valid and you don&apos;t
+        challenge it.
       </p>
-      <div className="callout">
-        <strong>The two checks to do:</strong>
-        <br />
+      <div className="note">
+        <span className="note-label">The two checks to do</span>
         Date&nbsp;3 minus Date&nbsp;1 must be at least 60 days (two months).
-        <br />
-        Date&nbsp;3 minus Date&nbsp;2 must be at least 12 months.
-        <br />
-        Fail either and the notice is invalid.
+        Date&nbsp;3 minus Date&nbsp;2 must be at least 12 months. Fail either
+        and the notice is invalid.
       </div>
 
-      <h2 id="defects">Where notices go wrong</h2>
+      <h2 id="defects" data-num="3">Where notices go wrong</h2>
       <p>
-        The most common defects I&apos;ve seen since the Act commenced, in
-        roughly the order they come up:
+        The most common defects since the Act commenced, in roughly the
+        order they come up:
       </p>
       <ul>
         <li>
-          <strong>Wrong form.</strong> The notice is on Form 4 (the old form),
-          a generic letter, or a custom landlord-drafted document. Form 4A is
-          the only valid form. Anything else fails on this point alone.
+          <strong>Wrong form.</strong> The notice is on Form 4 (the old
+          form), a generic letter, or a custom landlord-drafted document.
+          Form 4A is the only valid form. Anything else fails on this point
+          alone.
         </li>
         <li>
           <strong>Insufficient notice.</strong> The landlord gives one
@@ -133,13 +135,14 @@ export default function Page() {
         </li>
         <li>
           <strong>Within 12 months of the last increase.</strong> Landlord
-          tries to increase rent twice in a calendar year, or increases rent
-          within the first 12 months of the tenancy.
+          tries to increase rent twice in a calendar year, or increases
+          rent within the first 12 months of the tenancy.
         </li>
         <li>
-          <strong>Missing the right-to-challenge statement.</strong> The form
-          must include the statement informing you of your right to apply to
-          the First-tier Tribunal. A notice missing this is defective.
+          <strong>Missing the right-to-challenge statement.</strong> The
+          form must include the statement informing you of your right to
+          apply to the First-tier Tribunal. A notice missing this is
+          defective.
         </li>
         <li>
           <strong>Served on the wrong tenant.</strong> If your tenancy is in
@@ -153,32 +156,33 @@ export default function Page() {
       </ul>
       <p>
         Any single one of these can invalidate the notice. The check is
-        binary: either the notice is procedurally compliant or it isn&apos;t.
+        binary: either the notice is procedurally compliant or it
+        isn&apos;t.
       </p>
 
-      <h2 id="do-nothing">If you do nothing</h2>
+      <h2 id="do-nothing" data-num="4">If you do nothing</h2>
       <p>
         If a notice is procedurally valid and you take no action before the
-        proposed start date, the new rent becomes payable on that date. Doing
-        nothing is acceptance.
+        proposed start date, the new rent becomes payable on that date.
+        Doing nothing is acceptance.
       </p>
       <p>
-        Your landlord doesn&apos;t need to chase you, ask you to confirm, or
-        send a follow-up. The notice is self-executing. The first sign you
-        accepted the increase will be your next rent payment.
+        Your landlord doesn&apos;t need to chase you, ask you to confirm,
+        or send a follow-up. The notice is self-executing. The first sign
+        you accepted the increase will be your next rent payment.
       </p>
       <p>
         If a notice is <em>not</em> valid and you take no action, the new
-        rent doesn&apos;t become payable — but in practice it&apos;s sensible
-        to write to your landlord pointing out the defect, so there&apos;s no
-        confusion about what you owe and no risk of accidentally
-        underpaying.
+        rent doesn&apos;t become payable — but in practice it&apos;s
+        sensible to write to your landlord pointing out the defect, so
+        there&apos;s no confusion about what you owe and no risk of
+        accidentally underpaying.
       </p>
 
-      <h2 id="refer-tribunal">How to refer to the First-tier Tribunal</h2>
+      <h2 id="refer-tribunal" data-num="5">How to refer to the First-tier Tribunal</h2>
       <p>
-        If you want to challenge the proposed rent, you can refer the notice
-        to the First-tier Tribunal (Property Chamber). The route is
+        If you want to challenge the proposed rent, you can refer the
+        notice to the First-tier Tribunal (Property Chamber). The route is
         straightforward:
       </p>
       <ol>
@@ -197,28 +201,29 @@ export default function Page() {
           Submit your application before the proposed start date on the
           notice. Miss this date and you lose the right to challenge.
         </li>
+        <li>No fee for tenants. The application costs you nothing.</li>
         <li>
-          No fee for tenants. The application costs you nothing.
-        </li>
-        <li>
-          Provide evidence of comparable market rents — Rightmove and Zoopla
-          screenshots, ideally five comparable properties from your
+          Provide evidence of comparable market rents — Rightmove and
+          Zoopla screenshots, ideally five comparable properties from your
           postcode.
         </li>
         <li>
-          Most cases are decided on paper without a hearing. If a hearing is
-          listed, it&apos;s usually by video. You don&apos;t need a solicitor.
+          Most cases are decided on paper without a hearing. If a hearing
+          is listed, it&apos;s usually by video. You don&apos;t need a
+          solicitor.
         </li>
       </ol>
       <p>
         Decisions normally come within a few weeks of the application being
-        accepted. While the case is pending, you keep paying the current rent.
+        accepted. While the case is pending, you keep paying the current
+        rent.
       </p>
 
-      <h2 id="tribunal-powers">What the tribunal can decide</h2>
+      <h2 id="tribunal-powers" data-num="6">What the tribunal can decide</h2>
       <p>
         The tribunal&apos;s powers were significantly rebalanced toward
-        tenants under the Renters&apos; Rights Act 2025. Three things it can do:
+        tenants under the Renters&apos; Rights Act 2025. Three things it
+        can do:
       </p>
       <ul>
         <li>
@@ -227,23 +232,25 @@ export default function Page() {
         </li>
         <li>
           <strong>Set a lower figure</strong> if it finds the proposed rent
-          exceeds market rent. The new rent takes effect from the date of the
-          tribunal&apos;s decision — not the original proposed date.
+          exceeds market rent. The new rent takes effect from the date of
+          the tribunal&apos;s decision — not the original proposed date.
         </li>
         <li>
-          <strong>Defer the increase by up to two more months</strong> if it
-          finds paying the new rent immediately would cause you undue
+          <strong>Defer the increase by up to two more months</strong> if
+          it finds paying the new rent immediately would cause you undue
           hardship.
         </li>
       </ul>
+      <blockquote>
+        From 1 May 2026, the worst-case outcome of a tribunal challenge is
+        the rent stays where the landlord proposed it.
+      </blockquote>
       <p>
         What the tribunal can <em>not</em> do, which is the key change from
         the old regime: <strong>it cannot set the rent higher than the
         landlord proposed</strong>. Under the old rules, if the tribunal
-        determined market rent was £1,800 and the landlord had only asked for
-        £1,650, the rent went to £1,800. From 1 May 2026, the worst-case
-        outcome of a tribunal challenge is the rent stays where the landlord
-        proposed it.
+        determined market rent was £1,800 and the landlord had only asked
+        for £1,650, the rent went to £1,800.
       </p>
       <p>
         This change exists specifically to encourage tenants to challenge
@@ -253,14 +260,13 @@ export default function Page() {
         negligible.
       </p>
 
-      <h2 id="next">Where to next</h2>
+      <h2 id="next" data-num="7">Where to next</h2>
       <p>
         For the broader picture on how rent increases work,{" "}
         <a href="/guides/rent-increases">read our main rent increase guide</a>.
         If you want to run a specific notice against all of the above rules,{" "}
-        <a href="/rent-increase-check">use our free Section 13 check</a> — it
-        takes about a minute, runs entirely in your browser, and we never see
-        the figures you enter.
+        <a href="/rent-increase-check">use our free Section 13 check</a> —
+        about a minute, runs entirely in your browser.
       </p>
     </GuideLayout>
   );

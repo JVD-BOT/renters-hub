@@ -1,37 +1,39 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Masthead } from "@/components/masthead";
+import { Colophon } from "@/components/colophon";
 import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
-  axes: ["opsz", "SOFT"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://renters-hub.vercel.app"),
   title: {
-    default: "Renters Hub — Tools and guides for the Renters' Rights Act 2025",
+    default: "Renters Hub — A pamphlet for the Renters' Rights Act 2025",
     template: "%s · Renters Hub",
   },
   description:
-    "Plain-English tools and guides for private renters in England under the Renters' Rights Act 2025. Free Section 13 rent increase check, Section 8 grounds explained, and expert guides written by a renter for renters.",
+    "Plain-English guides and free tools for private renters in England under the Renters' Rights Act 2025. Independent. No tracking. No paywall.",
   applicationName: "Renters Hub",
   authors: [{ name: "Renters Hub" }],
   keywords: [
@@ -41,22 +43,14 @@ export const metadata: Metadata = {
     "Section 8 notice",
     "private renting England",
     "tenant rights UK 2026",
-    "First-tier Tribunal rent challenge",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: "https://renters-hub.vercel.app",
     siteName: "Renters Hub",
-    title: "Renters Hub — Tools and guides for the Renters' Rights Act 2025",
-    description:
-      "Free, plain-English tools and guides for private renters in England.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Renters Hub",
-    description:
-      "Plain-English tools and guides for private renters in England.",
+    title: "Renters Hub — A pamphlet for the Renters' Rights Act 2025",
+    description: "Plain-English guides and free tools for private renters in England.",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
@@ -68,12 +62,12 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} ${newsreader.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col bg-paper text-ink relative">
+        <Masthead />
+        <main className="flex-1 relative z-10">{children}</main>
+        <Colophon />
         <CookieBanner />
       </body>
     </html>
