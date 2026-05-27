@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* Renters Hub — design tokens.
+   Palette anchored to Jon's personal visual identity:
+   Ink/Paper/Signal/Mint/Coral/Mute, with Amber added for warning states. */
+
+:root {
+  --ink: #0D0D12;
+  --paper: #F5F3EE;
+  --paper-soft: #EDEAE2;
+  --signal: #5B5EFF;
+  --signal-soft: #ECECFF;
+  --mint: #2FFFC8;
+  --mint-soft: #E6FFF8;
+  --coral: #FF4E6A;
+  --coral-soft: #FFE9ED;
+  --amber: #F5B800;
+  --amber-soft: #FFF5D6;
+  --mute: #6B6B78;
+  --mute-soft: #E5E3DC;
+  --hairline: rgba(13, 13, 18, 0.08);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-mute: var(--mute);
+  --color-mute-soft: var(--mute-soft);
+  --color-hairline: var(--hairline);
+
+  /* Semantic aliases */
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Display heading style */
+.display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.display-italic {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Subtle paper grain for warmth */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Focus rings — accessible but on-brand */
+*:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Smooth scroll for in-page anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prose styles for guide pages */
+.prose {
+  color: var(--ink);
+  line-height: 1.7;
+}
+.prose h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.65rem;
+  letter-spacing: -0.015em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.prose h3 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose p {
+  margin-bottom: 1.1rem;
+  color: var(--ink);
+}
+.prose p + p {
+  margin-top: 0;
+}
+.prose a {
+  color: var(--signal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+.prose ul {
+  list-style: disc;
+  margin-left: 1.25rem;
+  margin-bottom: 1.1rem;
+}
+.prose ul li {
+  margin-bottom: 0.4rem;
+}
+.prose strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.prose blockquote {
+  border-left: 3px solid var(--signal);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--mute);
+  font-style: italic;
+}
+
+/* Animation utilities */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.5s ease-out backwards;
+}
