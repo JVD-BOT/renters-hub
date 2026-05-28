@@ -143,9 +143,12 @@ export default function Page() {
       <h2 id="tribunal" data-num="4">How to challenge an increase at the tribunal</h2>
       <p>
         The First-tier Tribunal (Property Chamber) hears Section 13
-        challenges. The route is genuinely accessible: there is no fee for
-        tenants, the application is online, and most cases are decided on
-        paper without you ever having to attend in person.
+        challenges. The route is genuinely accessible: the application fee is
+        £47 with no separate hearing fee — one of the lowest fees in HMCTS,
+        set this low specifically to make rent challenges accessible — and
+        Help with Fees is available if that is a problem. The application is
+        online, and most cases are decided on paper without you ever having to
+        attend in person.
       </p>
       <p>
         You must apply before the proposed start date on the notice. If the

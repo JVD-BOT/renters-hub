@@ -73,7 +73,7 @@ export default function Page() {
             </a>{" "}
             or{" "}
             <a
-              href="https://www.citizensadvice.org.uk/about-us/contact-us/contact-us/contact-us/"
+              href="https://www.citizensadvice.org.uk/about-us/contact-us/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brick underline underline-offset-2"

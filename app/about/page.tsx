@@ -22,6 +22,9 @@ export default function Page() {
         <h1 className="display-bold text-4xl sm:text-6xl leading-[1.02] tracking-tight">
           A pamphlet, not a platform.
         </h1>
+        <div className="meta text-mute mt-7 flex flex-wrap gap-x-4 gap-y-1">
+          <span>Last reviewed 27 May 2026</span>
+        </div>
       </header>
 
       <div className="prose">

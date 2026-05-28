@@ -201,7 +201,12 @@ export default function Page() {
           Submit your application before the proposed start date on the
           notice. Miss this date and you lose the right to challenge.
         </li>
-        <li>No fee for tenants. The application costs you nothing.</li>
+        <li>
+          Application fee is £47, paid by the tenant. There is no separate
+          hearing fee — this is one of the lowest application fees in HMCTS,
+          set deliberately low to make rent challenges accessible. Help with
+          Fees is available if you can&apos;t afford it.
+        </li>
         <li>
           Provide evidence of comparable market rents — Rightmove and
           Zoopla screenshots, ideally five comparable properties from your
