@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Renters Hub — questions, corrections, suggestions, or feedback.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function Page() {

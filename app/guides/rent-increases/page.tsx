@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "How rent increases work after 1 May 2026",
   description:
     "Plain-English guide to how landlords must increase rent on assured tenancies in England under the Renters' Rights Act 2025. The 12-month rule, two months' notice, Form 4A, and how to challenge at the First-tier Tribunal.",
+  alternates: {
+    canonical: "/guides/rent-increases",
+  },
 };
 
 export default function Page() {

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Rent increase check",
   description:
     "Free tool for tenants in England. Check whether a Section 13 rent increase notice on Form 4A follows the rules under the Renters' Rights Act 2025. Runs in your browser — figures are never sent to a server.",
+  alternates: {
+    canonical: "/rent-increase-check",
+  },
 };
 
 export default function ToolPage() {

@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy",
   description: "How Renters Hub handles your data. Spoiler: we don't collect any.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function Page() {

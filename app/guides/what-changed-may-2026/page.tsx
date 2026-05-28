@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "What changed on 1 May 2026 — the Renters' Rights Act explained",
   description:
     "Plain-English overview of the Renters' Rights Act 2025: what came into force on 1 May 2026, what it means for tenants in England, and what's still being phased in.",
+  alternates: {
+    canonical: "/guides/what-changed-may-2026",
+  },
 };
 
 export default function Page() {

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About Renters Hub",
   description:
     "Why Renters Hub exists, who's behind it, and how the guides and tools on this site are made and updated.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function Page() {

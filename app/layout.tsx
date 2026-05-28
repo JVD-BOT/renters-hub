@@ -53,7 +53,6 @@ export const metadata: Metadata = {
     description: "Plain-English guides and free tools for private renters in England.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({

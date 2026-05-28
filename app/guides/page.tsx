@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Guides",
   description:
     "Plain-English guides to the Renters' Rights Act 2025 for private renters in England.",
+  alternates: {
+    canonical: "/guides",
+  },
 };
 
 const GUIDES = [

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Section 13 notices, decoded — Form 4A explained",
   description:
     "Plain-English breakdown of Form 4A, the only valid form for a rent increase on an assured tenancy in England under the Renters' Rights Act 2025. Every required field, the dates that matter, and where notices go wrong.",
+  alternates: {
+    canonical: "/guides/section-13-notice",
+  },
 };
 
 export default function Page() {
