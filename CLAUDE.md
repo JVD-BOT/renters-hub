@@ -2,7 +2,7 @@
 
 A consumer-facing site for private renters in England, built around the Renters' Rights Act 2025 (commenced 1 May 2026). **Set as a publication, not a SaaS landing page.** Free, plain-English. Tenant-side first; landlord-side monetisation comes later.
 
-Live at: **https://renters-hub.vercel.app** (Vercel auto-deploys from `main`)
+Live at: **https://rentershub.co.uk** (Vercel auto-deploys from `main`)
 
 ## Design direction (v2)
 

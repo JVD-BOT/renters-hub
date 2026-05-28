@@ -27,7 +27,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://renters-hub.vercel.app"),
+  metadataBase: new URL("https://rentershub.co.uk"),
   title: {
     default: "Renters Hub — A pamphlet for the Renters' Rights Act 2025",
     template: "%s · Renters Hub",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://renters-hub.vercel.app",
+    url: "https://rentershub.co.uk",
     siteName: "Renters Hub",
     title: "Renters Hub — A pamphlet for the Renters' Rights Act 2025",
     description: "Plain-English guides and free tools for private renters in England.",

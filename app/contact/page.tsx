@@ -35,10 +35,10 @@ export default function Page() {
         <section>
           <p className="meta text-brick mb-3">Email</p>
           <a
-            href="mailto:hello@renters-hub.vercel.app"
+            href="mailto:hello@rentershub.co.uk"
             className="display text-2xl text-ink underline underline-offset-4 decoration-brick decoration-2 hover:bg-brick-soft"
           >
-            hello@renters-hub.vercel.app
+            hello@rentershub.co.uk
           </a>
           <p className="text-ink-soft mt-3 leading-relaxed">
             Best for: corrections, content suggestions, partnership
