@@ -116,9 +116,12 @@ export default function Page() {
       </blockquote>
       <p>
         If you think the proposed rent exceeds market rate, you can challenge
-        it for free at the First-tier Tribunal (Property Chamber) before the
-        new rent date. The tribunal can also defer the increase by up to two
-        more months if paying immediately would cause undue hardship.
+        it at the First-tier Tribunal (Property Chamber) before the new rent
+        date. The application fee is £47 with no separate hearing fee —
+        deliberately set low to make the route accessible — and the Help with
+        Fees scheme is available if you can&apos;t afford it. The tribunal can
+        also defer the increase by up to two more months if paying immediately
+        would cause undue hardship.
       </p>
       <p>
         We have a full guide on{" "}
